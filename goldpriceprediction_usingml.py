@@ -43,3 +43,9 @@ correlation = gold_data.corr()
 #constructing a heatmap to understand the correlation between the values
 plt.figure(figsize = (8,8))
 sns.heatmap(correlation, cbar=True, square=True, fmt='.1f', annot=True, annot_kws={'size':8}, cmap='Blues')
+
+#correlation values of gold
+print(correlation['GLD'])
+
+#understanding the distribution of the GLD using distplot
+sns.distplot(gold_data['GLD'],color='green')
