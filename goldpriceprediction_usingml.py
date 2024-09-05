@@ -33,3 +33,13 @@ gold_data.isnull().sum()
 
 #statistical measures of the dataset
 gold_data.describe()
+
+#Conversion of all columns to Numeric values to avoid errors during correlation
+gold_data = gold_data.apply(pd.to_numeric, errors='coerce')
+
+#calculation of correlation matrix
+correlation = gold_data.corr()
+
+#constructing a heatmap to understand the correlation between the values
+plt.figure(figsize = (8,8))
+sns.heatmap(correlation, cbar=True, square=True, fmt='.1f', annot=True, annot_kws={'size':8}, cmap='Blues')
