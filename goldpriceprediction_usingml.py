@@ -59,3 +59,10 @@ print(Y)
 
 #Splitting the data into Training Data and Test Data
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.2, random_state=2)
+
+
+#Model Training: Random Forest Regressor
+regressor = RandomForestRegressor(n_estimators=100)
+
+#training the model
+regressor.fit(X_train, Y_train)
