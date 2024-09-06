@@ -49,3 +49,10 @@ print(correlation['GLD'])
 
 #understanding the distribution of the GLD using distplot
 sns.distplot(gold_data['GLD'],color='green')
+
+#Creating a feature set by removing the Dates in order to train the model
+X = gold_data.drop(['Date','GLD'],axis=1)
+Y = gold_data['GLD']
+
+print(X)
+print(Y)
