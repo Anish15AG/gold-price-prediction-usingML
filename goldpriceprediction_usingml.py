@@ -82,3 +82,12 @@ From the R squared error, we obtain the accuracy the model. Higher the score, in
 
 #Comparing the Actual Values and Predicted Values in a Plot
 Y_test = list(Y_test)
+
+#Plotting the Actual Values and Predicted Values
+plt.plot(Y_test, color='blue', label='Actual Value')
+plt.plot(test_data_prediction, color='green', label='Predicted Values')
+plt.title('Actual vs Predicted Price')
+plt.xlabel('Number of Values')
+plt.ylabel('GLD Price in $(USD)')
+plt.legend()
+plt.show()
