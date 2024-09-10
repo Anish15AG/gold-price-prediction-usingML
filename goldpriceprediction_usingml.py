@@ -75,3 +75,10 @@ print(test_data_prediction)
 # R squared error
 error_score = metrics.r2_score(Y_test, test_data_prediction)
 print("R squared error : ", error_score)
+
+'''
+From the R squared error, we obtain the accuracy the model. Higher the score, indicates better accuracy
+'''
+
+#Comparing the Actual Values and Predicted Values in a Plot
+Y_test = list(Y_test)
