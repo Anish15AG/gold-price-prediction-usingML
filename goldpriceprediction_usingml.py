@@ -66,3 +66,12 @@ regressor = RandomForestRegressor(n_estimators=100)
 
 #training the model
 regressor.fit(X_train, Y_train)
+
+#prediction based on the test data
+test_data_prediction = regressor.predict(X_test)
+
+print(test_data_prediction)
+
+# R squared error
+error_score = metrics.r2_score(Y_test, test_data_prediction)
+print("R squared error : ", error_score)
