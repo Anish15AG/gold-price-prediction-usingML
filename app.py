@@ -32,4 +32,17 @@ if uploaded_file is not None:
   X = gold_data.drop(['Date', 'GLD'], axis=1)
   Y = gold_data['GLD']
 
-  
+  #Splitting the data into Training and Test Data respectively
+  X_train, X_test, Y_train, Y_test = train_test_split(X,Y, test_size=0.2, random_state=2)
+
+  #Training the Random Forest Model
+  regressor = RandomForestRegressor(n_estimators=100)
+  regressor.fit(X_train, Y_train)
+
+
+  #Predictions on the Test Data
+  test_data_prediction = regressor.predict(X_test)
+
+  #R Squared Error method to check the accuracy of the model
+  error_score = metrics.r2_score(Y_test, test_data_prediction)
+  st.write(f"R Squared Error: {error_score:.2f}")
