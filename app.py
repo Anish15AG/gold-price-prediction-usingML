@@ -46,3 +46,13 @@ if uploaded_file is not None:
   #R Squared Error method to check the accuracy of the model
   error_score = metrics.r2_score(Y_test, test_data_prediction)
   st.write(f"R Squared Error: {error_score:.2f}")
+
+  #Plotting the Actual and the Predicted Values
+  fig, ax = plt.subplots()
+  plt.plot(list(Y_test), color='blue', label='Actual Value')
+  plt.plot(test_data_prediction, color='green', label='Predicted Values')
+  plt.title('Actual vs Predicted Values')
+  plt.xlabel('Number of Values')
+  plt.ylabel('Gold Price in $(USD)')
+  plt.legend()
+  st.pyplot(fig)
